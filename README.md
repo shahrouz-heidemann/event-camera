@@ -57,9 +57,9 @@ This work is inspired by:
 
 | Original smartphone frame | Simulated DVS output |
 |:---:|:---:|
-| ![Original frame](media/ferrari.jpg) | ![DVS output](media/ferrari_out.jpg) |
+| ![Original frame](Ferarri.jpg) | ![DVS output](Ferarri_out.jpg) |
 
-Full video output: [`media/dvs_video.avi`](media/dvs_video.avi)
+Full video output: [`dvs_video.avi`](dvs_video.avi)
 
 | Metric | Value |
 |---|---|
@@ -96,12 +96,13 @@ Observations from this experiment:
 ├── event_rate_over_time.png        # event-rate plot from the custom simulator
 ├── README.md
 ├── requirements.txt
-└── media/
-    ├── mein_video.mp4              # smartphone input video
-    ├── ferrari.jpg                 # example input frame
-    ├── ferrari_out.jpg             # example simulated DVS frame
-    ├── dvs_video.avi               # full v2e output video
-    └── dvs_video-frame_times.txt   # per-frame timestamps from v2e
+simulator
+├── mein_video.mp4                  # smartphone input video
+├── Ferarri.jpg                     # example input frame
+├── Ferarri_out.jpg                 # example simulated DVS frame
+├── dvs_video.avi                   # full v2e output video
+├── dvs_video-frame_times.txt       # per-frame timestamps from v2e
+└── v2e-args.txt                    # exact v2e command-line arguments used
 ```
 
 ## Run the Custom Simulation
@@ -117,12 +118,15 @@ python event_camera_simulation.py
 pip install v2e
 
 python -m v2e \
-    -i media/mein_video.mp4 \
+    -i mein_video.mp4 \
     --dvs346 \
     --disable_slomo \
     -o output_folder \
     --dvs_vid dvs_video.avi
 ```
+
+The exact arguments used for the run above are saved in
+v2e-args.txt for reproducibility.
 
 ## Future Work
 
