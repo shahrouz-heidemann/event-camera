@@ -1,0 +1,83 @@
+
+*** arguments:
+auto_timestamp_resolution:	True
+avi_frame_rate:	30
+batch_size:	8
+crop:	None
+cs_lambda_pixels:	None
+cs_tau_p_ms:	None
+cutoff_hz:	300
+ddd_output:	False
+disable_slomo:	True
+dvs1024:	False
+dvs128:	False
+dvs240:	False
+dvs346:	True
+dvs640:	False
+dvs_aedat2:	None
+dvs_aedat4:	None
+dvs_emulator_seed:	0
+dvs_exposure:	['duration', '0.01']
+dvs_h5:	None
+dvs_params:	None
+dvs_text:	None
+dvs_vid:	dvs_video.avi
+dvs_vid_full_scale:	2
+hdr:	False
+input:	\\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\mein_video.mp4
+input_frame_rate:	None
+input_slowmotion_factor:	1.0
+label_signal_noise:	False
+leak_jitter_fraction:	0.1
+leak_rate_hz:	0.01
+neg_thres:	0.2
+no_preview:	False
+noise_rate_cov_decades:	0.1
+output_folder:	\\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\output_folder
+output_height:	None
+output_in_place:	False
+output_width:	None
+overwrite:	False
+photoreceptor_noise:	False
+pos_thres:	0.2
+record_single_pixel_states:	None
+refractory_period:	0.0005
+save_dvs_model_state:	False
+scidvs:	False
+shot_noise_rate_hz:	0.001
+show_dvs_model_state:	None
+sigma_thres:	0.03
+skip_video_output:	False
+slomo_model:	\\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\input\SuperSloMo39.ckpt
+slomo_stats_plot:	False
+start_time:	None
+stop_time:	None
+synthetic_input:	None
+timestamp_resolution:	None
+unique_output_folder:	True
+vid_orig:	video_orig.avi
+vid_slomo:	video_slomo.avi
+
+*** command line:
+ \\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\v2e.py -i mein_video.mp4 --dvs346 --disable_slomo -o output_folder --dvs_vid dvs_video.avi2026-07-14 16:37:13,094 - __main__ - [1;34mINFO[1;0m - opening video input file \\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\mein_video.mp4
+2026-07-14 16:37:13,685 - __main__ - [1;31mWARNING[1;0m - slomo interpolation disabled by command line option; output DVS timestamps will have source frame interval resolution
+2026-07-14 16:37:13,724 - __main__ - [1;34mINFO[1;0m - Source video \\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\mein_video.mp4 has total 127 frames with total duration 4.20s. 
+Source video is 30fps with slowmotion_factor 1 (frame interval 33.33ms),
+Will convert 127 frames 0 to 126
+(From 0.0s to 4.2s, duration 4.2s)
+2026-07-14 16:37:13,763 - __main__ - [1;34mINFO[1;0m - v2e DVS video will have constant-duration frames 
+at 100fps (accumulation time 10ms), 
+DVS video will have 420.0 frames with duration 4.20s and playback duration 14s
+
+2026-07-14 16:37:13,803 - __main__ - [1;34mINFO[1;0m - processing frames 0 to 126 from video input
+2026-07-14 16:37:13,844 - __main__ - [1;34mINFO[1;0m - Input video \\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\mein_video.mp4 has W=1080 x H=1192 frames each with 1 channels
+2026-07-14 16:37:13,881 - __main__ - [1;34mINFO[1;0m - *** Stage 1/3: Resizing 127 input frames to output size (with possible RGB to luma conversion)
+2026-07-14 16:37:21,517 - __main__ - [1;34mINFO[1;0m - *** Stage 2/3:turning npy frame files to png from C:\Users\HEIDEM~1.SHA\AppData\Local\Temp\tmpxz_n3nel
+2026-07-14 16:37:22,356 - __main__ - [1;34mINFO[1;0m - *** Stage 3/3: emulating DVS events from 127 frames
+2026-07-14 16:37:57,046 - __main__ - [1;34mINFO[1;0m - generated total 9.98M events (5.14M on, 4.84M off)
+2026-07-14 16:37:57,082 - __main__ - [1;34mINFO[1;0m - Avg event rate for N=89960 px and total time =4.200 s
+	Total: 2.38MHz (1.22MHz on, 1.15MHz off)
+	Per pixel:  26.41Hz (13.59Hz on, 12.82Hz off)
+2026-07-14 16:37:57,120 - __main__ - [1;34mINFO[1;0m - showing \\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\output_folder-3 in desktop
+2026-07-14 16:38:00,563 - __main__ - [1;34mINFO[1;0m - done processing 254 frames in 43.95s (5.78fr/s)
+ **************** see output folder \\tubfs.tu-berlin.de\heidemann.shahrouz\Desktop\v2e_project\v2e\output_folder-3
